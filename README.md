@@ -57,8 +57,33 @@ flowchart LR
     A -.- K1
 ```
 ## 7. Quantities
+| Symbol | Name and unit | Role | Source |
+|---|---|---|---|
+| Aₜ | New repair requests per hour, count | Input | Request log |
+| uᵢ | Urgency class of request i (urgent / minor), no unit: it is a category, not a number | Input | Set by the dispatcher at registration |
+| Qₜ | Requests waiting at time t, count | State | Reconstructed from the log |
+| Bₜ | Mechanics busy at time t, people | State | Reconstructed from the log |
+| c | Number of mechanics on shift, people | Controllable parameter | Shift schedule (5 / 6 / 7) |
+| d | Dispatching rule (FCFS / priority), no unit: it is a policy choice, not a number | Controllable parameter | Management decision |
+| Sᵢ | Time a mechanic spends on request i, hours | Input (determines when a mechanic becomes free again) | Log: t_finish − t_start |
+| Wᵢ | Wait before work starts on request i, hours | Output | Log: t_start − t_registered |
+
+The number of mechanics c is fixed within one scenario and changed between scenarios. Sᵢ lies outside the model boundary (the repair itself is not modeled), but it is still needed as an input because it determines when each mechanic is free to take the next request.
 
 ## 8. KPIs
+All KPIs are built from the waiting time of each request:
+
+Wᵢ = tᵢ(start) − tᵢ(registered), in hours
+
+| KPI | Calculation | Better | Link to decision |
+|---|---|---|---|
+| 1. Share of urgent requests started within 20 h (main KPI) | Urgent requests with Wᵢ ≤ 20 h ÷ all urgent requests × 100% | Higher | The main number the manager compares across the 6 scenarios (5/6/7 mechanics × FCFS/priority) |
+| 2. 90th percentile of waiting time for urgent requests | Sort urgent requests' Wᵢ from shortest to longest and take the value 90% of the way along: 9 in 10 urgent requests waited no longer | Lower | Shows the worst delays, which are what cause fruit losses during harvest |
+| 3. Share of minor requests started within 20 h | Same as KPI 1, for minor requests | Higher, or at least not collapsing | Priority dispatching speeds up urgent requests by delaying minor ones; this KPI shows that cost |
+
+**Why 20 hours:** picked fruit should reach the packhouse within about a day, so a stopped machine needs a mechanic to start work by the next morning at the latest.
+
+**What the average alone hides:** an average wait of 10 hours could mean every request waits about 10 hours, or that most wait 2 hours while a few wait 3 days. Both give the same average. For citrus farmers during harvest, those rare multi-day waits are what cause losses, so the average can look acceptable while service fails exactly when it matters. The share within 20 hours and the 90th percentile show long delays directly. A single average across all requests would also hide how priority dispatching shifts waiting from urgent to minor requests, which is why the KPIs are split by urgency.
 
 ## 9. Assumptions
 | Assumption | If it is wrong |
