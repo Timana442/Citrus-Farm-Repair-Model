@@ -94,6 +94,30 @@ Wᵢ = tᵢ(start) − tᵢ(registered), in hours
 | All 5–7 mechanics are available for the whole shift | Sick days or long trips to distant farms reduce real capacity, so the model is too optimistic |
 
 ## 10. Models
+Both options are classified on the same basis: the **level of detail** at which requests are described (aggregated counts vs individual requests).
+
+### Option A: Aggregated hourly model
+Tracks the number of requests arriving, started and waiting, hour by hour:
+
+Qₜ₊₁ = Qₜ + Aₜ − (requests started in hour t)
+
+where the number started per hour is limited by the number of free mechanics.
+
+- **Question it answers:** how the queue length changes over a harvest day or week, and whether 5, 6 or 7 mechanics can keep up with arrivals at all.
+- **Data needed:** hourly arrival counts Aₜ, average repair time, number of mechanics c.
+- **What it simplifies:** treats all requests as identical and works with counts and averages, not individual requests.
+- **Why choose / not choose:** simple, fast and easy to check by hand. But it cannot tell urgent requests from minor ones, so it **cannot evaluate priority dispatching**, and it cannot measure each request's wait Wᵢ, so it **cannot calculate the main KPI** (share started within 20 hours) or the 90th percentile.
+
+### Option B: Discrete-event simulation of individual requests
+Simulates each request (arrival time, urgency class) and each mechanic (busy/free) as separate objects. Events: request arrives → joins queue → assigned when a mechanic is free (by FCFS or priority rule) → mechanic busy for Sᵢ → mechanic free again.
+
+- **Question it answers:** the full main question: the share of urgent requests started within 20 hours for each of the 6 scenarios (5/6/7 mechanics × FCFS/priority), plus the 90th percentile and the effect on minor requests.
+- **Data needed:** arrival times of requests, urgency class uᵢ, repair times Sᵢ (from the log), number of mechanics c, dispatching rule d.
+- **What it simplifies:** no travel time, all mechanics interchangeable, no cancellations (see assumptions, section 9).
+- **Why choose / not choose:** directly calculates every KPI and can compare dispatching rules. It is more work to build and needs individual-level data. Because it includes randomness, it must be run many times to get stable results.
+
+### Initial choice
+**Option B** is chosen as the main model, because the main question depends on individual waiting times and on urgency classes. Option A cannot answer it. **Option A is still useful as a quick first check:** if it shows that 5 mechanics cannot keep up with harvest arrivals on average, Option B should show long and growing queues for that scenario too (see verification, section 11).
 
 ## 11. Verification
 
