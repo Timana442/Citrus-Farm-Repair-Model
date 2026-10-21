@@ -1,3 +1,26 @@
+# Farm Machinery Repair Service: Model Description
+
+## 1. Title and context
+A service center in the Lowveld region of Mpumalanga repairs tractors and other agricultural machinery for local citrus farms. During the harvest season, it receives significantly more repair requests than in other months, and farmers report long waits between submitting a request and a mechanic starting work. These delays are costly: a broken tractor or forklift stops picked fruit from reaching the packhouse on time, which leads to quality losses and missed export deadlines. The center's management wants to reduce waiting times during peak season without permanently increasing staff costs.
+
+## 2. Stakeholder
+The service center manager, who plans staffing and dispatching. Secondary: the citrus farmers.
+
+## 3. Decision
+How to staff and organize dispatching during harvest season. Alternatives:
+1. Hire 1–2 seasonal mechanics (6 or 7 instead of the current 5)
+2. Introduce priority dispatching (urgent = machine stopped and needed for harvest; minor = everything else)
+3. Both together
+
+Future directions: travel time to farms, spare-parts delays, separate field and workshop crews.
+
+## 4. Question
+How will the share of urgent repair requests on which a mechanic starts work within 20 hours change during harvest season if the center operates with 5, 6 or 7 mechanics, under first-come-first-served versus priority dispatching?
+
+## 5. Boundaries
+
+
+## 6. Diagram
 ```mermaid
 flowchart LR
     F(["Farmer: breakdown occurs"]) -->|"repair request"| R
@@ -13,3 +36,4 @@ flowchart LR
     K1{{"KPI measured here: W = t_start - t_registered"}}
     A -.- K1
 ```
+## 7. Quantities
