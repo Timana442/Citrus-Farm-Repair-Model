@@ -22,17 +22,6 @@ mindmap
       Ends when mechanic starts work
       External: weather, farmers
       Excluded: repair, travel
-    Elements and flow
-      Farmer request
-      Registration, urgency class
-      Queue
-      Assignment to free mechanic
-      Mechanics pool
-    Quantities
-      Inputs: arrivals, urgency, repair time
-      States: queue length, busy mechanics
-      Parameters: No. of mechanics, dispatch rule
-      Output: waiting time
     KPIs
       Urgent share within 20 hours
       90th percentile wait
