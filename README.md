@@ -4,56 +4,25 @@
 
 ```mermaid
 mindmap
-  root((Farm machinery repair service, Lowveld citrus farms))
+  root((Farm repair service))
     Problem
-      Harvest peak in repair requests
-      Long waits before a mechanic starts
-      Fruit misses packhouse and export deadlines
-    Stakeholders
-      Service center manager
-      Citrus farmers
+      Harvest peak
+      Long waits
+      Fruit losses
     Decision
-      Hire seasonal mechanics, 6 or 7
-      Priority dispatching for urgent requests
-      Both together
+      More mechanics
+      Priority dispatching
     Question
-      Share of urgent requests started within 20 hours
-      5, 6 or 7 mechanics
-      FCFS vs priority
-    Boundary
-      Starts at request registration
-      Ends when mechanic starts work
-      External: season, weather, farmers
-      Excluded: repair, parts, travel
-    Elements and flow
-      Farmer request
-      Registration and urgency class
+      Urgent requests started within 20 h
+    System
+      Requests
       Queue
-      Assignment to free mechanic
-      Mechanics pool
-    Quantities
-      Inputs: arrivals, urgency, repair time
-      States: queue length, busy mechanics
-      Parameters: number of mechanics, dispatch rule
-      Output: waiting time
+      Mechanics
     KPIs
-      Urgent share within 20 hours
+      Share within 20 h
       90th percentile wait
-      Minor share within 20 hours
-    Assumptions
-      All mechanics repair all machines
-      Urgency classified correctly
-      No cancellations
-    Models
-      A: aggregated hourly model
-      B: discrete-event simulation, chosen
-    Verification
-      Logic checks on extreme cases
-      Compare with unseen harvest data
-    Limitations
-      No estimate of fruit losses
-      Harvest season only
-      Travel time ignored
+    Model
+      Discrete-event simulation
 ```
 
 ## 1. Title and context
