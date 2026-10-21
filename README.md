@@ -61,6 +61,12 @@ flowchart LR
 ## 8. KPIs
 
 ## 9. Assumptions
+| Assumption | If it is wrong |
+|---|---|
+| Every mechanic can repair every type of machine | Waits for specialized machines (e.g. packhouse forklifts) are underestimated, because only some mechanics can take them |
+| Urgency is classified correctly at registration | If farmers mark minor faults as urgent to get faster service, priority dispatching loses its effect and the KPI for urgent requests looks worse than it should |
+| Requests stay in the queue until assigned (no cancellations) | If farmers give up and repair machines themselves or call another workshop, the real queue is shorter than the modeled one |
+| All 5–7 mechanics are available for the whole shift | Sick days or long trips to distant farms reduce real capacity, so the model is too optimistic |
 
 ## 10. Models
 
