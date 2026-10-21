@@ -73,4 +73,11 @@ flowchart LR
 ## 11. Verification
 
 ## 12. Limitations
+1. **No estimate of fruit losses or money.** The model measures waiting time before a mechanic starts, not total downtime or how much citrus is lost. It can show which scenario reduces waits, but not whether hiring a seasonal mechanic pays for itself.
+
+2. **Results apply to harvest-season conditions only.** The model is set up for peak-season request rates. Its conclusions cannot be transferred to the off-season or to a harvest with very different breakdown rates (for example, after an unusually wet season).
+
+3. **Travel time is ignored.** Lowveld farms are spread out, so a mechanic travelling to a distant farm is unavailable for longer. The model may overestimate how many requests each mechanic can take on, so the real benefit of 6 or 7 mechanics may differ.
+
+4. **The model compares scenarios; it does not predict exact numbers.** Because of the simplifying assumptions (section 9), results should be read as "scenario A is better than scenario B by roughly this much", not as exact waiting times farmers will experience.
 
