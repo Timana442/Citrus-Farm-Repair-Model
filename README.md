@@ -1,5 +1,61 @@
 # Farm Machinery Repair Service: Model Description
 
+## Mind map
+
+```mermaid
+mindmap
+  root((Farm machinery repair service, Lowveld citrus farms))
+    Problem
+      Harvest peak in repair requests
+      Long waits before a mechanic starts
+      Fruit misses packhouse and export deadlines
+    Stakeholders
+      Service center manager
+      Citrus farmers
+    Decision
+      Hire seasonal mechanics, 6 or 7
+      Priority dispatching for urgent requests
+      Both together
+    Question
+      Share of urgent requests started within 20 hours
+      5, 6 or 7 mechanics
+      FCFS vs priority
+    Boundary
+      Starts at request registration
+      Ends when mechanic starts work
+      External: season, weather, farmers
+      Excluded: repair, parts, travel
+    Elements and flow
+      Farmer request
+      Registration and urgency class
+      Queue
+      Assignment to free mechanic
+      Mechanics pool
+    Quantities
+      Inputs: arrivals, urgency, repair time
+      States: queue length, busy mechanics
+      Parameters: number of mechanics, dispatch rule
+      Output: waiting time
+    KPIs
+      Urgent share within 20 hours
+      90th percentile wait
+      Minor share within 20 hours
+    Assumptions
+      All mechanics repair all machines
+      Urgency classified correctly
+      No cancellations
+    Models
+      A: aggregated hourly model
+      B: discrete-event simulation, chosen
+    Verification
+      Logic checks on extreme cases
+      Compare with unseen harvest data
+    Limitations
+      No estimate of fruit losses
+      Harvest season only
+      Travel time ignored
+```
+
 ## 1. Title and context
 A service center in the Lowveld region of Mpumalanga repairs tractors and other agricultural machinery for local citrus farms. During the harvest season, it receives significantly more repair requests than in other months, and farmers report long waits between submitting a request and a mechanic starting work. These delays are costly: a broken tractor or forklift stops picked fruit from reaching the packhouse on time, which leads to quality losses and missed export deadlines. The center's management wants to reduce waiting times during peak season without permanently increasing staff costs.
 
