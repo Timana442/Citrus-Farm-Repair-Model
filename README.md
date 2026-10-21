@@ -9,9 +9,6 @@ mindmap
       Harvest peak in repair requests
       Long waits
       Fruit misses export deadlines
-    Stakeholders
-      Service center manager
-      Citrus farmers
     Decision
       Hire seasonal mechanics
       Priority dispatching
