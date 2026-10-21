@@ -18,7 +18,27 @@ Future directions: travel time to farms, spare-parts delays, separate field and 
 How will the share of urgent repair requests on which a mechanic starts work within 20 hours change during harvest season if the center operates with 5, 6 or 7 mechanics, under first-come-first-served versus priority dispatching?
 
 ## 5. Boundaries
+**Start:** a repair request is registered by the dispatcher and classified as urgent or minor.
+**End:** a mechanic is assigned and starts work on the request.
 
+**Inside the model:**
+- registration and urgency classification of requests
+- the queue of waiting requests
+- the dispatching rule (first-come-first-served or priority)
+- assignment to a free mechanic
+- the pool of mechanics (busy or free)
+
+**External influences (affect the system but are not modeled):**
+- harvest season and weather, which drive how often machines break down
+- farmers' decisions to submit requests
+- the mechanics' shift schedule
+
+**Deliberately excluded:**
+- repair duration and quality: the question is about waiting to start, not about fixing
+- spare-parts availability: a separate problem needing separate data
+- travel time to farms: simplified for the first version, although Lowveld farms are spread out, so this is a key future direction
+
+**Consequence of the boundary:** because the model ends when a mechanic starts work, it can estimate the wait before service begins, but it cannot estimate total machine downtime, which also includes travel, diagnosis, waiting for parts and the repair itself. So the model cannot directly estimate how much fruit is lost.
 
 ## 6. Diagram
 ```mermaid
@@ -37,3 +57,9 @@ flowchart LR
     A -.- K1
 ```
 ## 7. Quantities
+
+## 8. KPIs
+
+## 9. Assumptions
+
+
