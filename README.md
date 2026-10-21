@@ -14,17 +14,17 @@ mindmap
       Citrus farmers
     Decision
       Hire seasonal mechanics
-      Priority dispatching for urgent requests
+      Priority dispatching
       Both together
     Question
-      Share of urgent requests started within 20 hours
+      Urgent requests within 20 hours
       5, 6 or 7 mechanics
       FCFS vs priority
     Boundary
       Starts at request registration
       Ends when mechanic starts work
-      External: season, weather, farmers
-      Excluded: repair, parts, travel
+      External: weather, farmers
+      Excluded: repair, travel
     Elements and flow
       Farmer request
       Registration, urgency class
@@ -34,7 +34,7 @@ mindmap
     Quantities
       Inputs: arrivals, urgency, repair time
       States: queue length, busy mechanics
-      Parameters: number of mechanics, dispatch rule
+      Parameters: No. of mechanics, dispatch rule
       Output: waiting time
     KPIs
       Urgent share within 20 hours
