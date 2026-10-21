@@ -120,6 +120,20 @@ Simulates each request (arrival time, urgency class) and each mechanic (busy/fre
 **Option B** is chosen as the main model, because the main question depends on individual waiting times and on urgency classes. Option A cannot answer it. **Option A is still useful as a quick first check:** if it shows that 5 mechanics cannot keep up with harvest arrivals on average, Option B should show long and growing queues for that scenario too (see verification, section 11).
 
 ## 11. Verification
+### Logic checks (is the model built correctly?)
+Simple extreme cases where the correct result is known in advance:
+
+1. **No new requests:** if Aₜ = 0 and mechanics are working, the queue Qₜ must not grow; it should shrink to zero.
+2. **More mechanics never hurts:** with the same arrivals, going from 5 to 6 to 7 mechanics must not increase waiting times.
+3. **Priority only reorders the queue:** with the same number of mechanics, switching from FCFS to priority dispatching should shorten waits for urgent requests and lengthen them for minor ones; the total number of requests served should stay about the same.
+4. **Cross-check with Option A:** if the aggregated hourly model (section 10) shows that average arrivals exceed what 5 mechanics can handle, the simulation should show a growing queue for that scenario too.
+
+### Comparison with observations (does the model match reality?)
+The request log from a past harvest season is split into two parts:
+- **Part 1 (e.g. the first half of the harvest):** used to set the model's inputs (arrival rates, share of urgent requests, repair times Sᵢ).
+- **Part 2 (the second half):** not used for setup. The model is run for the current situation (5 mechanics, FCFS), and its results are compared with what actually happened in Part 2: the share of urgent requests started within 20 hours, the 90th percentile of waits, and the overall distribution of waiting times.
+
+If the model's results are close to the observed ones, it can be trusted to compare the other scenarios. If not, the assumptions in section 9 are checked first, for example whether travel time or mechanic specialization needs to be added.
 
 ## 12. Limitations
 1. **No estimate of fruit losses or money.** The model measures waiting time before a mechanic starts, not total downtime or how much citrus is lost. It can show which scenario reduces waits, but not whether hiring a seasonal mechanic pays for itself.
@@ -129,4 +143,3 @@ Simulates each request (arrival time, urgency class) and each mechanic (busy/fre
 3. **Travel time is ignored.** Lowveld farms are spread out, so a mechanic travelling to a distant farm is unavailable for longer. The model may overestimate how many requests each mechanic can take on, so the real benefit of 6 or 7 mechanics may differ.
 
 4. **The model compares scenarios; it does not predict exact numbers.** Because of the simplifying assumptions (section 9), results should be read as "scenario A is better than scenario B by roughly this much", not as exact waiting times farmers will experience.
-
