@@ -51,7 +51,7 @@ The service center manager, who plans staffing and dispatching. Secondary: the c
 ## 3. Decision
 How to staff and organize dispatching during harvest season. Alternatives:
 1. Hire 1–2 seasonal mechanics (6 or 7 instead of the current 5)
-2. Introduce priority dispatching (urgent = machine stopped and needed for harvest; minor = everything else)
+2. Introduce priority dispatching instead of the current first-come-first-served (FCFS) order (urgent = machine stopped and needed for harvest; minor = everything else)
 3. Both together
 
 Future directions: travel time to farms, spare-parts delays, separate field and workshop crews.
