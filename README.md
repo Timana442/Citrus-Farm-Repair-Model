@@ -46,7 +46,7 @@ mindmap
 A service center in the Lowveld region of Mpumalanga repairs tractors and other agricultural machinery for local citrus farms. During the harvest season, it receives significantly more repair requests than in other months, and farmers report long waits between submitting a request and a mechanic starting work. These delays are costly: a broken tractor or forklift stops picked fruit from reaching the packhouse on time, which leads to quality losses and missed export deadlines. The center's management wants to reduce waiting times during peak season without permanently increasing staff costs.
 
 ## 2. Stakeholder
-The service center manager, who plans staffing and dispatching. Secondary: the citrus farmers.
+The service center manager, who plans staffing and dispatching. Secondary: the citrus farmers, who experience the waits.
 
 ## 3. Decision
 How to staff and organize dispatching during harvest season. Alternatives:
