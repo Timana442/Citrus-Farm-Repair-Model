@@ -57,7 +57,7 @@ How to staff and organize dispatching during harvest season. Alternatives:
 Future directions: travel time to farms, spare-parts delays, separate field and workshop crews.
 
 ## 4. Question
-How will the share of urgent repair requests on which a mechanic starts work within 20 hours change during harvest season if the center operates with 5, 6 or 7 mechanics, under first-come-first-served versus priority dispatching?
+How will the share of urgent repair requests on which a mechanic starts work within 20 hours change during harvest season if the center operates with 5, 6 or 7 mechanics, under FCFS versus priority dispatching?
 
 ## 5. Boundaries
 **Start:** a repair request is registered by the dispatcher and classified as urgent or minor.
@@ -66,7 +66,7 @@ How will the share of urgent repair requests on which a mechanic starts work wit
 **Inside the model:**
 - registration and urgency classification of requests
 - the queue of waiting requests
-- the dispatching rule (first-come-first-served or priority)
+- the dispatching rule (FCFS or priority)
 - assignment to a free mechanic
 - the pool of mechanics (busy or free)
 
