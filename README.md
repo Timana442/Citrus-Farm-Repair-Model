@@ -6,7 +6,7 @@
 mindmap
   root((Farm machinery repair service, Lowveld citrus farms))
     Problem
-      Harvest peak in repair requests
+      Peak in repair requests
       Long waits
       Fruit misses export deadlines
     Decision
@@ -14,7 +14,7 @@ mindmap
       Priority dispatching
       Both together
     Question
-      Urgent requests within 20 hours
+      Urgent requests
       5, 6 or 7 mechanics
       FCFS vs priority
     Boundary
@@ -27,12 +27,12 @@ mindmap
       90th percentile wait
       Minor share within 20 hours
     Assumptions
-      All mechanics repair all machines
+      All mechanics repair
       Urgency classified correctly
       No cancellations
     Models
       A: aggregated hourly model
-      B: discrete-event simulation, chosen
+      B: discrete-event simulation
     Verification
       Logic checks on extreme cases
       Compare with unseen harvest data
