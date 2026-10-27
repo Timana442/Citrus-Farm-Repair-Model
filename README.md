@@ -20,8 +20,6 @@ mindmap
     Boundary
       Starts at request registration
       Ends when mechanic starts work
-      External: weather, farmers
-      Excluded: repair, travel
     KPIs
       Urgent share within 20 hours
       90th percentile wait
