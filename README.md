@@ -176,7 +176,7 @@ The request log from a past harvest season is split into two parts:
 If the model's results are close to the observed ones, it can be trusted to compare the other scenarios. If not, the assumptions in section 9 are checked first, for example whether travel time or mechanic specialization needs to be added.
 
 ## 12. Limitations
-1. **No estimate of fruit losses or money.** The model measures waiting time before a mechanic starts, not total downtime or how much citrus is lost. It can show which scenario reduces waits, but not whether hiring a seasonal mechanic pays for itself.
+1. **No estimate of fruit losses or money.** The model measures waiting time before a mechanic starts, not the total downtime or how much citrus is lost. It can show which scenario reduces waits, but not whether hiring a seasonal mechanic pays for itself.
 
 2. **Results apply to harvest-season conditions only.** The model is set up for peak-season request rates. Its conclusions cannot be transferred to the off-season or to a harvest with very different breakdown rates (for example, after an unusually wet season).
 
